@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 32" width="100%" height="32">
+  <defs>
+    <linearGradient id="sigGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.2"/>
+      <stop offset="35%" stop-color="#06B6D4" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#3B82F6" stop-opacity="1"/>
+      <stop offset="65%" stop-color="#8B5CF6" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.2"/>
+    </linearGradient>
+    <style>
+      @keyframes waveScroll {
+        0% { stroke-dashoffset: 900; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .wave-path {
+        stroke-dasharray: 120, 240;
+        animation: waveScroll 5s linear infinite;
+      }
+    </style>
+  </defs>
+  
+  <!-- Subtle baseline -->
+  <line x1="0" y1="16" x2="900" y2="16" stroke="#1E293B" stroke-width="1" stroke-dasharray="4, 4"/>
+  
+  <!-- Oscilloscope / Radar Pulse Waveform -->
+  <path d="M 0 16 L 220 16 L 240 16 L 250 8 L 260 24 L 270 2 L 280 30 L 290 10 L 300 20 L 310 16 L 560 16 L 570 16 L 580 9 L 590 23 L 600 4 L 610 28 L 620 12 L 630 16 L 900 16"
+        fill="none" stroke="#0E3A52" stroke-width="1.8"/>
+
+  <path d="M 0 16 L 220 16 L 240 16 L 250 8 L 260 24 L 270 2 L 280 30 L 290 10 L 300 20 L 310 16 L 560 16 L 570 16 L 580 9 L 590 23 L 600 4 L 610 28 L 620 12 L 630 16 L 900 16"
+        fill="none" stroke="url(#sigGrad)" stroke-width="2.2" class="wave-path"/>
+</svg>

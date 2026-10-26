@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080C14"/>
+      <stop offset="50%" stop-color="#0D131F"/>
+      <stop offset="100%" stop-color="#05080E"/>
+    </linearGradient>
+
+    <linearGradient id="cyanPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+
+    <linearGradient id="pulseGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1E293B" stroke-width="0.5" stroke-opacity="0.4"/>
+      <circle cx="0" cy="0" r="1" fill="#06B6D4" fill-opacity="0.3"/>
+    </pattern>
+
+    <style>
+      .term-text { font-family: 'SF Mono', Consolas, 'Fira Code', Monaco, monospace; }
+      .title-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', sans-serif; font-weight: 800; }
+      .sub-text { font-family: 'SF Mono', Consolas, 'Fira Code', Monaco, monospace; font-size: 11px; letter-spacing: 2px; }
+      
+      @keyframes dash {
+        0% { stroke-dashoffset: 600; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.2; }
+      }
+      @keyframes pulseNode {
+        0%, 100% { r: 3; fill-opacity: 0.6; }
+        50% { r: 5; fill-opacity: 1; }
+      }
+      @keyframes scanline {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(280px); }
+      }
+
+      .trace-anim-1 {
+        stroke-dasharray: 80, 160;
+        animation: dash 6s linear infinite;
+      }
+      .trace-anim-2 {
+        stroke-dasharray: 60, 120;
+        animation: dash 4.5s linear infinite reverse;
+      }
+      .blink-cur {
+        animation: blink 1.2s infinite;
+      }
+      .pulsing-node {
+        animation: pulseNode 2.5s infinite ease-in-out;
+      }
+    </style>
+  </defs>
+
+  <!-- Card Background with Border -->
+  <rect width="960" height="280" rx="14" fill="url(#bgGrad)"/>
+  <rect width="960" height="280" rx="14" fill="url(#grid)"/>
+  <rect width="958" height="278" x="1" y="1" rx="13" fill="none" stroke="#1E293B" stroke-width="1.5"/>
+
+  <!-- Terminal Top Bar -->
+  <path d="M 0 14 Q 0 0 14 0 L 946 0 Q 960 0 960 14 L 960 38 L 0 38 Z" fill="#0B111E"/>
+  <line x1="0" y1="38" x2="960" y2="38" stroke="#1E293B" stroke-width="1"/>
+  <circle cx="24" cy="19" r="5" fill="#EF4444" fill-opacity="0.8"/>
+  <circle cx="40" cy="19" r="5" fill="#F59E0B" fill-opacity="0.8"/>
+  <circle cx="56" cy="19" r="5" fill="#10B981" fill-opacity="0.8"/>
+  <text x="80" y="23" fill="#64748B" class="term-text" font-size="11">buddhadeb@firmware-lab:~ (ARM-Cortex-M / ESP32-S3 / POSIX C)</text>
+  <text x="840" y="23" fill="#06B6D4" class="term-text" font-size="10" font-weight="bold">[BAUD: 115200]</text>
+
+  <!-- Circuit Trace Schematics (Left & Right decorative PCB traces) -->
+  <g stroke="#0E3A52" stroke-width="1.5" fill="none">
+    <path d="M 30 70 L 120 70 L 150 100 L 190 100"/>
+    <path d="M 30 110 L 90 110 L 130 150 L 160 150"/>
+    <path d="M 30 200 L 100 200 L 140 160 L 210 160"/>
+    <path d="M 770 70 L 830 70 L 860 100 L 930 100"/>
+    <path d="M 740 120 L 800 120 L 830 90 L 930 90"/>
+    <path d="M 720 200 L 790 200 L 830 160 L 930 160"/>
+    <path d="M 780 230 L 840 230 L 870 200 L 930 200"/>
+  </g>
+
+  <!-- Animated Glowing Overlay Traces -->
+  <g stroke="url(#cyanPurple)" stroke-width="2" fill="none">
+    <path d="M 30 70 L 120 70 L 150 100 L 190 100" class="trace-anim-1"/>
+    <path d="M 30 200 L 100 200 L 140 160 L 210 160" class="trace-anim-2"/>
+    <path d="M 740 120 L 800 120 L 830 90 L 930 90" class="trace-anim-1"/>
+    <path d="M 720 200 L 790 200 L 830 160 L 930 160" class="trace-anim-2"/>
+  </g>
+
+  <!-- Solder Pad Nodes -->
+  <circle cx="190" cy="100" r="3.5" fill="#06B6D4" class="pulsing-node"/>
+  <circle cx="160" cy="150" r="3" fill="#3B82F6"/>
+  <circle cx="210" cy="160" r="3.5" fill="#8B5CF6" class="pulsing-node"/>
+  <circle cx="740" cy="120" r="3.5" fill="#06B6D4" class="pulsing-node"/>
+  <circle cx="720" cy="200" r="3.5" fill="#8B5CF6" class="pulsing-node"/>
+
+  <!-- Central Visual Identity Box -->
+  <g transform="translate(180, 56)">
+    <!-- Subtitle Header / Terminal Prompt -->
+    <text x="0" y="24" fill="#06B6D4" class="term-text" font-size="12" font-weight="600">&gt; SYS_INIT: ATTACHED ARCHITECTURE // DSCE ECE</text>
+    
+    <!-- Main Name -->
+    <text x="0" y="72" fill="#FFFFFF" class="title-text" font-size="44" letter-spacing="-0.5">BUDDHADEB BANIK</text>
+    <text x="475" y="72" fill="#06B6D4" class="title-text blink-cur" font-size="44">_</text>
+
+    <!-- Engineering Domains -->
+    <text x="0" y="104" fill="#94A3B8" class="sub-text">EMBEDDED SYSTEMS &amp; FIRMWARE &#8226; LOW-LEVEL C/C++ &#8226; HARDWARE INTEGRATION</text>
+
+    <!-- Badges / Tags inside Banner -->
+    <g transform="translate(0, 126)">
+      <!-- Tag 1: ECE -->
+      <rect x="0" y="0" width="138" height="26" rx="6" fill="#0F172A" stroke="#06B6D4" stroke-width="1"/>
+      <circle cx="12" cy="13" r="3.5" fill="#06B6D4"/>
+      <text x="24" y="17" fill="#E2E8F0" class="term-text" font-size="10" font-weight="600">ECE @ DSCE '29</text>
+
+      <!-- Tag 2: STM32 / ESP32 -->
+      <rect x="146" y="0" width="168" height="26" rx="6" fill="#0F172A" stroke="#3B82F6" stroke-width="1"/>
+      <circle cx="158" cy="13" r="3.5" fill="#3B82F6"/>
+      <text x="170" y="17" fill="#E2E8F0" class="term-text" font-size="10" font-weight="600">ESP32 &#8226; STM32 &#8226; C99</text>
+
+      <!-- Tag 3: I2C / SPI / UART -->
+      <rect x="322" y="0" width="164" height="26" rx="6" fill="#0F172A" stroke="#8B5CF6" stroke-width="1"/>
+      <circle cx="334" cy="13" r="3.5" fill="#8B5CF6"/>
+      <text x="346" y="17" fill="#E2E8F0" class="term-text" font-size="10" font-weight="600">I2C &#8226; SPI &#8226; UART &#8226; USB</text>
+
+      <!-- Tag 4: KiCad PCB -->
+      <rect x="494" y="0" width="128" height="26" rx="6" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+      <circle cx="506" cy="13" r="3.5" fill="#10B981"/>
+      <text x="518" y="17" fill="#E2E8F0" class="term-text" font-size="10" font-weight="600">KiCad &#8226; PCB EDA</text>
+    </g>
+  </g>
+
+  <!-- Subtle Bottom Hardware Status Telemetry -->
+  <line x1="20" y1="248" x2="940" y2="248" stroke="#1E293B" stroke-width="1"/>
+  <text x="30" y="265" fill="#475569" class="term-text" font-size="9.5">CLOCK: 160MHz | RAM_BASE: 0x20000000 | VDD: 3.3V REGULATED | INTERRUPTS: ENABLED</text>
+  <text x="760" y="265" fill="#10B981" class="term-text" font-size="9.5" font-weight="bold">&#9679; EMBEDDED_DEV_STATUS: ACTIVE</text>
+</svg>

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 310" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D131F"/>
+      <stop offset="100%" stop-color="#080C14"/>
+    </linearGradient>
+    <linearGradient id="podBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#151D2E"/>
+      <stop offset="100%" stop-color="#0E1524"/>
+    </linearGradient>
+    <style>
+      .t-mono { font-family: 'SF Mono', Consolas, 'Fira Code', Monaco, monospace; }
+      .t-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Container -->
+  <rect width="840" height="310" rx="12" fill="url(#cardBg)" stroke="#1E293B" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <path d="M 0 12 Q 0 0 12 0 L 828 0 Q 840 0 840 12 L 840 38 L 0 38 Z" fill="#0B101B"/>
+  <line x1="0" y1="38" x2="840" y2="38" stroke="#1E293B" stroke-width="1"/>
+  <circle cx="20" cy="19" r="4.5" fill="#EF4444"/>
+  <circle cx="34" cy="19" r="4.5" fill="#F59E0B"/>
+  <circle cx="48" cy="19" r="4.5" fill="#10B981"/>
+  <text x="68" y="23" fill="#94A3B8" class="t-mono" font-size="11" font-weight="bold">SYSTEM TELEMETRY // VERIFIED REPOSITORY &amp; CONTRIBUTION METRICS</text>
+  <text x="690" y="23" fill="#06B6D4" class="t-mono" font-size="10.5">SOURCE: GRAPHQL</text>
+
+  <!-- 4 Metrics Pods -->
+  <!-- Pod 1: Contributions -->
+  <g transform="translate(30, 56)">
+    <rect width="175" height="92" rx="8" fill="url(#podBg)" stroke="#1E293B" stroke-width="1"/>
+    <text x="14" y="24" fill="#64748B" class="t-mono" font-size="10">ANNUAL CONTRIBUTIONS</text>
+    <text x="14" y="60" fill="#22D3EE" class="t-sans" font-size="28" font-weight="800">314</text>
+    <text x="14" y="80" fill="#10B981" class="t-mono" font-size="9.5">&#9650; Verified Commits &amp; PRs</text>
+  </g>
+
+  <!-- Pod 2: Public Repos -->
+  <g transform="translate(225, 56)">
+    <rect width="175" height="92" rx="8" fill="url(#podBg)" stroke="#1E293B" stroke-width="1"/>
+    <text x="14" y="24" fill="#64748B" class="t-mono" font-size="10">PUBLIC REPOSITORIES</text>
+    <text x="14" y="60" fill="#3B82F6" class="t-sans" font-size="28" font-weight="800">23</text>
+    <text x="14" y="80" fill="#94A3B8" class="t-mono" font-size="9.5">18 Original / 5 Forked</text>
+  </g>
+
+  <!-- Pod 3: Low-Level Focus -->
+  <g transform="translate(420, 56)">
+    <rect width="175" height="92" rx="8" fill="url(#podBg)" stroke="#1E293B" stroke-width="1"/>
+    <text x="14" y="24" fill="#64748B" class="t-mono" font-size="10">PRIMARY LANGUAGE (C)</text>
+    <text x="14" y="60" fill="#06B6D4" class="t-sans" font-size="28" font-weight="800">90.6%</text>
+    <text x="14" y="80" fill="#64748B" class="t-mono" font-size="9.5">15.6 MB Pure C Source</text>
+  </g>
+
+  <!-- Pod 4: Contribution Streak -->
+  <g transform="translate(615, 56)">
+    <rect width="195" height="92" rx="8" fill="url(#podBg)" stroke="#1E293B" stroke-width="1"/>
+    <text x="14" y="24" fill="#64748B" class="t-mono" font-size="10">ACTIVITY STREAK</text>
+    <text x="14" y="60" fill="#8B5CF6" class="t-sans" font-size="28" font-weight="800">3 <tspan font-size="16" fill="#94A3B8">/ 5 max</tspan></text>
+    <text x="14" y="80" fill="#10B981" class="t-mono" font-size="9.5">Active Past 3 Days</text>
+  </g>
+
+  <!-- Codebase Language Distribution Bar -->
+  <g transform="translate(30, 168)">
+    <text x="0" y="14" fill="#E2E8F0" class="t-mono" font-size="11" font-weight="600">VERIFIED CODEBASE LANGUAGE COMPOSITION (OWN REPOSITORIES)</text>
+    <text x="635" y="14" fill="#64748B" class="t-mono" font-size="9.5">TOTAL: 17.3 MB CODE</text>
+    
+    <!-- Multi-segment bar -->
+    <g transform="translate(0, 24)">
+      <rect x="0" y="0" width="780" height="14" rx="7" fill="#1E293B"/>
+      <!-- C -->
+      <rect x="0" y="0" width="688" height="14" rx="7" fill="#06B6D4"/>
+      <!-- Python -->
+      <rect x="688" y="0" width="45" height="14" fill="#3B82F6"/>
+      <!-- JavaScript -->
+      <rect x="733" y="0" width="14" height="14" fill="#FACC15"/>
+      <!-- C++ -->
+      <rect x="747" y="0" width="4" height="14" fill="#EC4899"/>
+      <!-- Other -->
+      <rect x="751" y="0" width="9" height="14" rx="7" fill="#8B5CF6"/>
+    </g>
+
+    <!-- Legend -->
+    <g transform="translate(0, 56)">
+      <circle cx="6" cy="6" r="4.5" fill="#06B6D4"/>
+      <text x="18" y="10" fill="#E2E8F0" class="t-mono" font-size="10.5">C (90.6%)</text>
+
+      <circle cx="140" cy="6" r="4.5" fill="#3B82F6"/>
+      <text x="152" y="10" fill="#E2E8F0" class="t-mono" font-size="10.5">Python (6.0%)</text>
+
+      <circle cx="280" cy="6" r="4.5" fill="#FACC15"/>
+      <text x="292" y="10" fill="#E2E8F0" class="t-mono" font-size="10.5">JavaScript (1.9%)</text>
+
+      <circle cx="430" cy="6" r="4.5" fill="#EC4899"/>
+      <text x="442" y="10" fill="#E2E8F0" class="t-mono" font-size="10.5">C++ (0.6%)</text>
+
+      <circle cx="560" cy="6" r="4.5" fill="#8B5CF6"/>
+      <text x="572" y="10" fill="#E2E8F0" class="t-mono" font-size="10.5">Assembly &amp; Others (0.9%)</text>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <line x1="20" y1="278" x2="820" y2="278" stroke="#1E293B" stroke-width="1"/>
+  <text x="30" y="295" fill="#475569" class="t-mono" font-size="9.5">Generated deterministically via GitHub Actions &#8226; Refresh: Daily at 00:00 UTC</text>
+  <text x="640" y="295" fill="#475569" class="t-mono" font-size="9.5">Updated: 2026-10-26 11:56 UTC</text>
+</svg>
