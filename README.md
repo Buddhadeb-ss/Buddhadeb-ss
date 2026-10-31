@@ -219,7 +219,7 @@ A curated selection of substantive projects built from actual code, hardware des
 </div>
 
 > [!NOTE]
-> **Data Integrity &amp; Transparency:** All telemetry statistics are retrieved directly via GitHub's public GraphQL API and repository byte analysis. The metrics reflect **23 public repositories** (18 original sources and 5 curated forks), encompassing **347 verified contributions** over the past year. Language percentages represent actual non-vendored source bytes (90.6% C, 6.0% Python). Snapshot timestamp: `2026-10-30 04:59 UTC`.
+> **Data Integrity &amp; Transparency:** All telemetry statistics are retrieved directly via GitHub's public GraphQL API and repository byte analysis. The metrics reflect **23 public repositories** (18 original sources and 5 curated forks), encompassing **385 verified contributions** over the past year. Language percentages represent actual non-vendored source bytes (90.6% C, 6.0% Python). Snapshot timestamp: `2026-10-31 04:47 UTC`.
 <!-- END: GENERATED GITHUB STATS -->
 
 ---
