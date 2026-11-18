@@ -14,6 +14,7 @@ Updates:
 import os
 import sys
 import json
+import re
 import urllib.request
 import subprocess
 from datetime import datetime, timezone
@@ -31,7 +32,7 @@ os.makedirs(ASSETS_DIR, exist_ok=True)
 DATA = {
     "username": "Buddhadeb-ss",
     "name": "Buddhadeb Banik",
-    "total_contributions": 314,
+    "total_contributions": 426,
     "public_repos": 23,
     "original_repos": 18,
     "forked_repos": 5,
@@ -58,7 +59,7 @@ DATA = {
     },
     "codechef": {
         "username": "buddhadebbanik",
-        "problems_solved": 12,
+        "problems_solved": 21,
         "language": "C / C++",
         "sync_tool": "CP Sync"
     },
@@ -167,6 +168,25 @@ def fetch_live_leetcode_data():
             print("Successfully updated LeetCode live data.")
     except Exception as e:
         print(f"Notice: Using verified cached baseline for LeetCode ({e}).")
+
+
+def fetch_live_codechef_data():
+    """Attempt to fetch live CodeChef stats by scraping public user profile."""
+    try:
+        username = DATA['codechef']['username']
+        url = f'https://www.codechef.com/users/{username}'
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            html = resp.read().decode('utf-8', errors='ignore')
+            m = re.search(r'Total Problems Solved[^\d]*(\d+)', html, re.IGNORECASE)
+            if m:
+                count = int(m.group(1))
+                DATA['codechef']['problems_solved'] = count
+                print(f"Successfully updated CodeChef live data: {count} problems solved.")
+            else:
+                print("Notice: Could not parse CodeChef problem count, using baseline.")
+    except Exception as e:
+        print(f"Notice: Using verified cached baseline for CodeChef ({e}).")
 
 
 def generate_banner_svg():
@@ -627,6 +647,11 @@ def update_readme_stats():
 {end_marker}"""
 
     new_content = before + stats_markdown + after
+
+    # Dynamically keep CodeChef problem count synced in the competitive programming section
+    cc_pattern = r'(\*\*\[CodeChef Profile \(@' + re.escape(DATA['codechef']['username']) + r'\)\]\([^)]+\):\*\*\s*)\d+(\s*verified problems solved)'
+    new_content = re.sub(cc_pattern, rf"\g<1>{DATA['codechef']['problems_solved']}\g<2>", new_content)
+
     with open(README_PATH, "w", encoding="utf-8") as f:
         f.write(new_content)
     print("Successfully refreshed dynamic section in README.md.")
@@ -636,6 +661,7 @@ def main():
     print("=== Starting Deterministic Asset & Telemetry Generation ===")
     fetch_live_github_data()
     fetch_live_leetcode_data()
+    fetch_live_codechef_data()
     generate_banner_svg()
     generate_signal_divider_svg()
     generate_metrics_dashboard_svg()
