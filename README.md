@@ -219,7 +219,7 @@ A curated selection of substantive projects built from actual code, hardware des
 </div>
 
 > [!NOTE]
-> **Data Integrity &amp; Transparency:** All telemetry statistics are retrieved directly via GitHub's public GraphQL API and repository byte analysis. The metrics reflect **23 public repositories** (18 original sources and 5 curated forks), encompassing **431 verified contributions** over the past year. Language percentages represent actual non-vendored source bytes (90.6% C, 6.0% Python). Snapshot timestamp: `2026-11-20 06:27 UTC`.
+> **Data Integrity &amp; Transparency:** All telemetry statistics are retrieved directly via GitHub's public GraphQL API and repository byte analysis. The metrics reflect **23 public repositories** (18 original sources and 5 curated forks), encompassing **433 verified contributions** over the past year. Language percentages represent actual non-vendored source bytes (90.6% C, 6.0% Python). Snapshot timestamp: `2026-11-21 06:18 UTC`.
 <!-- END: GENERATED GITHUB STATS -->
 
 ---
@@ -238,7 +238,7 @@ Practicing Data Structures &amp; Algorithms with a focus on low-level memory eff
 </div>
 
 - **[LeetCode Profile (@Buddha001)](https://leetcode.com/u/Buddha001/):** Solves algorithmic challenges implemented in pure C (C99), focusing on memory footprint, recursion, and array structures.
-- **[CodeChef Profile (@buddhadebbanik)](https://www.codechef.com/users/buddhadebbanik):** 21 verified problems solved in competitive programming contests and DSA practice tracks.
+- **[CodeChef Profile (@buddhadebbanik)](https://www.codechef.com/users/buddhadebbanik):** 23 verified problems solved in competitive programming contests and DSA practice tracks.
 - **Automated Sync Engine:** All accepted judge submissions automatically synchronize directly to the [coding-practice](https://github.com/Buddhadeb-ss/coding-practice) repository via CP-Sync.
 
 ---
